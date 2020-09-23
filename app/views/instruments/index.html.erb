@@ -16,10 +16,13 @@
     <% @instruments.each do |instrument| %>
       <tr>
         <td><%= instrument.name %></td>
-        <td><%= price_mask_real(instrument.price) %></td>        
+        <td><%= price_mask_real(instrument.price) %></td>
+        <td><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></td>        
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
 
 <br>
