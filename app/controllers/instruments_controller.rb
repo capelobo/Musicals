@@ -36,3 +36,4 @@ class InstrumentsController < ApplicationController
   end
 
 end
+
