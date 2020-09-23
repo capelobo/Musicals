@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dddwbxenp
+  api_key: '985941313635418'
+  api_secret: fodCM5EiY3r8Y3ZSco6Wfch8PnM
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dddwbxenp
+  api_key: '985941313635418'
+  api_secret: fodCM5EiY3r8Y3ZSco6Wfch8PnM
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dddwbxenp
+  api_key: '985941313635418'
+  api_secret: fodCM5EiY3r8Y3ZSco6Wfch8PnM
+  enhance_image_tag: true
+  static_file_support: false

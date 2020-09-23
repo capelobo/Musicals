@@ -11,6 +11,7 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.new(instrument_params)
+    @instrument.user_id = User.last.id
     @instrument.save
     if @instrument.save
       redirect_to instrument_path(@instrument)
@@ -30,7 +31,7 @@ class InstrumentsController < ApplicationController
   end
 
    def instrument_params
-    params.require(:instrument).permit(:name, :price, :description, :photo)
+    params.require(:instrument).permit(:name, :price, :description)
   end
 
 end
