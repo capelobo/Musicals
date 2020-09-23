@@ -1,0 +1,9 @@
+<h1>Edit Your Instrument</h1>
+
+<%= simple_form_for (@instrument) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :price %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+  <% end %>
+
