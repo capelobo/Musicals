@@ -34,15 +34,6 @@ ActiveRecord::Schema.define(version: 2020_09_23_142201) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "transactions", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "instrument_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["instrument_id"], name: "index_transactions_on_instrument_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -58,6 +49,4 @@ ActiveRecord::Schema.define(version: 2020_09_23_142201) do
   add_foreign_key "instruments", "users"
   add_foreign_key "orders", "instruments"
   add_foreign_key "orders", "users"
-  add_foreign_key "transactions", "instruments"
-  add_foreign_key "transactions", "users"
 end
