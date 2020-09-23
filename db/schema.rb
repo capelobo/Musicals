@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_09_23_142201) do
 
   create_table "instruments", force: :cascade do |t|
     t.string "name"
-    t.integer "price"
+    t.decimal "price"
     t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
