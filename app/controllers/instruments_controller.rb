@@ -5,6 +5,16 @@ class InstrumentsController < ApplicationController
     @instruments = Instrument.all
   end
 
+  def edit
+    set_instrument
+  end
+
+  def update
+    set_instrument
+    @instrument.update(instrument_params)
+    redirect_to instrument_path(@instrument)
+  end
+
   def new
     @instrument = Instrument.new
   end
@@ -29,14 +39,17 @@ class InstrumentsController < ApplicationController
     redirect_to instruments_url, notice: 'Instrument was successfully destroyed.'
   end
 
+
   private
 
   def set_instrument
     @instrument = Instrument.find(params[:id])
   end
 
+
    def instrument_params
     params.require(:instrument).permit(:name, :price, :description)
   end
 
 end
+
