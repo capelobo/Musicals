@@ -15,7 +15,7 @@
   <tbody>
     <% @instruments.each do |instrument| %>
       <tr>
-        <td><%= instrument.name %></td>
+        <td><%= link_to instrument.name, instrument %></td>
         <td><%= price_mask_real(instrument.price) %></td>
         <td><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Edit', edit_instrument_path(instrument) %></td>
