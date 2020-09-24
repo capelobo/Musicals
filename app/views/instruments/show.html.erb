@@ -1,28 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<%= cl_image_tag @instrument.photo.key, height: 300, width: 400, crop: :fill %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @instrument.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @instrument.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= price_mask_real(@instrument.price) %>
-</p>
-
-
-
-<!-- <input class="btn btn-primary" type="submit" value="Buy this instrument"> -->
-
+<h1><%= @instrument.name %></h1>
+<div class="row">
+  <div class="col-6">
+    <%= cl_image_tag @instrument.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div class="col-6">
+  <h3><strong>Price:</strong> <%= price_mask_real(@instrument.price) %></h3>
+<br>
+  <h3><strong>Description:</strong></h3>
+  <p><%= @instrument.description %></p>
+  <br>
 <%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
-
-
-
-
+</div>
+</div>
