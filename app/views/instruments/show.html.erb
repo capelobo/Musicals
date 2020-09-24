@@ -16,3 +16,13 @@
   <strong>Price:</strong>
   <%= price_mask_real(@instrument.price) %>
 </p>
+
+
+
+<!-- <input class="btn btn-primary" type="submit" value="Buy this instrument"> -->
+
+<%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
+
+
+
+
