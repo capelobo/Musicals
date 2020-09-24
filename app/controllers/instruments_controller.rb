@@ -2,7 +2,6 @@ class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :destroy]
 
   def index
-    @myinstruments = Instrument.all.select { |x| x.user_id == User.last.id}
     @instruments = Instrument.all
   end
 
@@ -22,7 +21,7 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.new(instrument_params)
-    @instrument.user_id = User.last.id
+    @instrument.user_id = current_user.id
     @instrument.save
     if @instrument.save
       redirect_to instrument_path(@instrument)
@@ -36,7 +35,7 @@ class InstrumentsController < ApplicationController
   end
 
   def destroy
-    @instrument.user_id = User.last.id
+    @instrument.user_id = current_user.id
     @instrument.delete
     redirect_to instruments_url, notice: 'Instrument was successfully destroyed.'
   end
