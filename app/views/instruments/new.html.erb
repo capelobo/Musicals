@@ -1,4 +1,4 @@
-<h6">Cadastre seu instrumento</h6>
+<h6">Tell us about your order</h6>
 
 <div class="container">
   <%= simple_form_for(@instrument) do |f| %>
@@ -6,8 +6,8 @@
     <%= f.input :name %>
     <%= f.input :price %>
     <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Crie sua oferta"%>
+    <%= f.input :photo, as: :file%>
+    <%= f.submit "Create order"%>
   </div>
   <% end %>
 </div>
