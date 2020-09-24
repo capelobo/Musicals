@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= cl_image_tag @instrument.photo.key, height: 300, width: 400, crop: :fill %>
+
 <p>
   <strong>Name:</strong>
   <%= @instrument.name %>
