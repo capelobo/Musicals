@@ -3,6 +3,16 @@
 
 <h1>Check all Instruments</h1>
 
+<%= form_tag instruments_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an instrument"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
 <%if user_signed_in? %>
 <table class='table'>
   <thead>
