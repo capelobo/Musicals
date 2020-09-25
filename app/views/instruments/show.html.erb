@@ -21,8 +21,11 @@
 
 <!-- <input class="btn btn-primary" type="submit" value="Buy this instrument"> -->
 
-<%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
-
+<% if current_user == @instrument.user %>
+  <%= link_to "Voltar", instruments_path %>
+<% else %>
+  <%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
+<% end %>
 
 
 

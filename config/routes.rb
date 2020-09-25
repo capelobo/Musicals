@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :instruments do
     resources :orders, only: [:new, :create]
   end
+
+  
   root to: 'instruments#index'
 end
