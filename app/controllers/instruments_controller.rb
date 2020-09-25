@@ -14,11 +14,7 @@ class InstrumentsController < ApplicationController
     set_instrument
   end
 
-  def my_instruments
-    if current_user.present?
-    @myinstruments = Instrument.all.select { |x| x.user == current_user}
-    end
-  end
+
 
   def update
     set_instrument
@@ -43,6 +39,13 @@ class InstrumentsController < ApplicationController
 
 
   def show
+  end
+
+
+  def mine
+    if current_user.present?
+    @myinstruments = Instrument.all.select { |x| x.user == current_user}
+    end
   end
 
   def destroy
