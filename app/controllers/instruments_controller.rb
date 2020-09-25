@@ -3,7 +3,13 @@ class InstrumentsController < ApplicationController
 
   def index
     @myinstruments = Instrument.all.select { |x| x.user_id == User.last.id}
-    @instruments = Instrument.all
+    if params[:query].present?
+      @instruments = Instrument.search_by_name_and_description(params[:query])
+    else
+      @instruments = Instrument.all
+    end
+
+
   end
 
   def edit
