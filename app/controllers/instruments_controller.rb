@@ -2,23 +2,23 @@ class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :destroy]
 
   def index
-    @myinstruments = Instrument.all.select { |x| x.user_id == User.last.id}
+   
     if params[:query].present?
       @instruments = Instrument.search_by_name_and_description(params[:query])
     else
       @instruments = Instrument.all
     end
-
-
   end
 
   def edit
     set_instrument
   end
 
-  #metodo myproduct
-  #if current_user.present?
-  #@myinstruments = Instrument.all.select { |x| x.user == current_user}
+  def my_instruments
+    if current_user.present?
+    @myinstruments = Instrument.all.select { |x| x.user == current_user}
+    end
+  end
 
   def update
     set_instrument
