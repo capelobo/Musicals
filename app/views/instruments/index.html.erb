@@ -1,134 +1,53 @@
-
-<div class="container">
-<p id="notice"><%= notice %></p>
-
-<h1>Check all Instruments</h1>
-
-
-<%if user_signed_in? %>
-<<<<<<< HEAD
-<div class="row">
-  <div class="col-4 musicbox">
-  <h4>My instruments</h4>
-  <%@myinstruments = Instrument.all.select { |instrument| instrument.user_id == current_user.id}%>
-
-    <table class='table'>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Price</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-    <tbody>
-      <% @myinstruments.each do |instrument| %>
-        <tr>
-          <td><%=cl_image_tag instrument.photo.key, height: 50, width: 50, crop: :fill%></td>
-          <td><%= link_to instrument.name, instrument %></td>
-          <td><%= price_mask_real(instrument.price) %></td>
-          <td><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to 'Edit', edit_instrument_path(instrument) %></td>
-        </tr>
+<div class="banner"><h1>Musical's</h1></div>
+  <div class="container">
+    <h2 class="head-title">Choose your tone:</h2>
+      <%if user_signed_in? %>
+        <%@myinstruments = Instrument.all.select { |instrument| instrument.user_id == current_user.id}%>
+        <%@othersinstruments = @instruments.reject { |inst| @myinstruments.include? inst } %>
+        <div class="row">
+          <div class="col-9">
+            <div class="row">
+              <%@othersinstruments.each do |instrument| %>
+                <div class="col-3">
+                  <div class="card">
+                    <div class="pic"><%=cl_image_tag instrument.photo.key, height: 152, width: 152, crop: :fill%>
+                      <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
+                    </div>
+                    <h4><%= link_to instrument.name, instrument %></h4>
+                  </div>
+                    <br>
+                </div>
+              <%end%>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="my-cards-area">
+              <h4>My instruments</h4>
+              <% @myinstruments.each do |instrument| %>
+              <div class="card">
+                <div class="pic"><%=cl_image_tag instrument.photo.key, height: 160, width: 160, crop: :fill%>
+                  <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
+                </div>
+                <h4><%= link_to instrument.name, instrument %></h4>
+                <div class="manager_area">
+                  <div><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                  <div><%= link_to 'Edit', edit_instrument_path(instrument) %></div>
+                </div>
+              </div>
+              <%end%>
+            </div>
+          </div>
+      <%else%>
+      <div class="row">
+        <%@instruments.each do |instrument| %>
+        <div class="col-3">
+          <div class="card">
+            <div class="pic"><%=cl_image_tag instrument.photo.key, height: 223, width: 223, crop: :fill%>
+              <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
+            </div>
+            <h4><%= link_to instrument.name, instrument %></h4>
+          </div>
+        </div>
+        <%end%>
       <%end%>
-    </tbody>
-  <br>
-</table>
-</div>
-<div class='col-1 separator'>
-</div>
-  <%@othersinstruments = @instruments.reject { |inst| @myinstruments.include? inst } %>
-  <div class="col-7 musicbox">
-    <h4>Would you like to buy one instrument?</h4>
-    <br>
-  <% if @othersinstruments != nil %>
-    <table class='table'>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Price</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-    <tbody>
-        <%@othersinstruments.each do |instrument| %>
-        <tr>
-          <td><%=cl_image_tag instrument.photo.key, height: 50, width: 50, crop: :fill%></td>
-          <td><%= link_to instrument.name, instrument %></td>
-          <td><%= price_mask_real(instrument.price) %></td>
-        </tr>
-        <% end %>
-      <%end%>
-    </tbody>
-  </table>
-</div>
-</div>
-  <br>
-<br>
-
-<%else%>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Price</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <%@instruments.each do |instrument| %>
-      <tr>
-         <td><%=cl_image_tag instrument.photo.key, height: 50, width: 50, crop: :fill%></td>
-        <td><%= link_to instrument.name, instrument %></td>
-        <td><%= price_mask_real(instrument.price) %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-=======
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @myinstruments.each do |instrument| %>
-    <tr>
-      <td><%= link_to instrument.name, instrument %></td>
-      <td><%= price_mask_real(instrument.price) %></td>
-      <td><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td><%= link_to 'Edit', edit_instrument_path(instrument) %></td>
-    </tr>
-  <%end%>
-</tbody>
->>>>>>> c4de0387e855f3e43777b9b55da831c0a952cd17
-<%end%>
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%@instruments.each do |instrument| %>
-    <tr>
-      <td><%= link_to instrument.name, instrument %></td>
-      <td><%= price_mask_real(instrument.price) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
 </div>

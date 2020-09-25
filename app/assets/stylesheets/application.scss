@@ -16,32 +16,152 @@ body{
   background-color: #b7b7a4;
 }
 
-h1, h4{
-  text-align:center;
-  color:#1d3557;
+.spread{
+  display:flex;
+  flex-direction:row;
+  align-items:space-between;
+  a{
+  color:#797d62;
+  }
+  a:hover{
+    color:#b7b7a4;
+  }
 }
 
-h1{
- margin-bottom:60px;
+#upperbar{
+  background-color:#e8eddf;
+}
+
+.logbtn{
+  border:1px solid #797d62;
+  border-radius:15px;
+  a{
+  color:#797d62;
+  }
+  a:hover{
+    color:white;
+  }
+}
+
+.logbtn:hover{
+background-color: #797d62;
+}
+
+.banner{
+  background-image: url('homepage.jpg');
+  height:300px;
+  width:100%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding:60px;
+  h1{
+    color:white;
+    text-shadow: 2px 2px #797d62;
+    font-family: 'Lobster', cursive;
+    font-size:120px;
+    text-align:center;
+  }
+}
+
+h1, h2, h3, h4{
+  color:#333533;
+  font-family: 'Varela Round', sans-serif;
+  font-weight:500;
 }
 
 h4{
-  margin-bottom:30px;
+  margin-top:10px;
+  text-align:center;
+  a{
+    color:#333533;
+  }
 }
 
-h2{
-  font-size:50px;
-  color:#1d3557;
-  margin-bottom:20px;
-
+.head-title{
+  margin-top:20px;
+  margin-bottom:15px;
 }
 
-h3{
-  font-size:20px;
-  color:#1d3557;
+.card{
+  padding:5px;
+  border-radius:5px;
+  background-color:#cad2c5;
   margin:10px;
 }
 
-.btn{
+.pic{
+  width:100%;
+}
+
+.price-tag{
+  background-color:#6a040f;
+  color:white;
+  width:100%;
+  padding:5px 5px;
+  font-size:14px;
+  text-align:center;
+}
+.my-cards-area{
+  width:75%;
+  margin:auto;
+  float:right;
+}
+
+.manager_area{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  a{
+    color:#6a040f;
+  }
+}
+
+.instrument-title{
+  font-size:70px;
+  text-align:center;
+  margin-bottom: 0px;
+  font-family: 'Vollkorn', serif;
+  text-shadow: 1px 1px white;
+}
+
+.instrument-area{
+  background-color:#edeec9;
+  margin:10px auto;
+  padding:5px;
   border-radius:5px;
+  width:80%;
+}
+
+.show-picture{
+  padding:2px 2px;
+  margin:1px;
+}
+
+.instrument-box{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.order-details{
+  background-color:transparent;
+  padding:30px;
+  margin-left:10px;
+  border-radius:5px;
+  text-align:center;
+  width:90%;
+  border:1px solid #84a59d;
+  // box-shadow:1px 1px #264653;
+}
+
+.btn{
+  background-color:#264653;
+  border:1px solid #2f3e46;
+  border-radius:5px;
+}
+
+.btn:hover{
+  background-color:#84a59d;
+  border:1px solid #84a59d;
 }
