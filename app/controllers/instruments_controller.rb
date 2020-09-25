@@ -10,6 +10,10 @@ class InstrumentsController < ApplicationController
     set_instrument
   end
 
+  #metodo myproduct
+  #if current_user.present?
+  #@myinstruments = Instrument.all.select { |x| x.user == current_user}
+
   def update
     set_instrument
     @instrument.update(instrument_params)
