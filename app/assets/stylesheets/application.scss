@@ -16,6 +16,12 @@ body{
   background-color: #b7b7a4;
 }
 
+.logo{
+  margin:0px;
+  font-size:26px;
+  font-family: 'Lobster', cursive
+}
+
 .spread{
   display:flex;
   flex-direction:row;
@@ -125,11 +131,13 @@ h4{
 }
 
 .instrument-area{
-  background-color:#edeec9;
-  margin:10px auto;
+  background-color:#eae2b7;
+  margin:auto;
   padding:5px;
   border-radius:5px;
   width:80%;
+  border:2px solid #a5a58d;
+  // box-shadow: 1px 2px #a5a58d;
 }
 
 .show-picture{
@@ -147,11 +155,11 @@ h4{
 .order-details{
   background-color:transparent;
   padding:30px;
-  margin-left:10px;
+  margin-left:40px;
   border-radius:5px;
   text-align:center;
   width:90%;
-  border:1px solid #84a59d;
+  border:1px solid #a5a58d;
   // box-shadow:1px 1px #264653;
 }
 

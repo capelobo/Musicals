@@ -1,7 +1,9 @@
 <div class="navbar navbar-light navbar-lewagon" id="upperbar">
   <% if user_signed_in? %>
     <div class="spread">
-      <%= link_to "Home", instruments_path, class: "nav-link" %>
+      <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
+    </div>
+    <div class="spread">
       <%= link_to "Cadastrar oferta", "/instruments/new", class: "nav-link" %>
     </div>
     <div class="logbtn">
@@ -9,9 +11,9 @@
     </div>
   <% else %>
     <div class="spread">
-      <%= link_to "Home", instruments_path, class: "nav-link" %>
+      <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
     </div>
-    <div style="margin-left:85%" class="logbtn">
+    <div style="margin-left:70%" class="logbtn">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </div>
   <% end %>
