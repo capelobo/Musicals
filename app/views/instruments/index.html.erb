@@ -5,12 +5,12 @@
         <%@myinstruments = Instrument.all.select { |instrument| instrument.user_id == current_user.id}%>
         <%@othersinstruments = @instruments.reject { |inst| @myinstruments.include? inst } %>
         <div class="row">
-          <div class="col-9">
+          <div class="col-10">
             <div class="row">
               <%@othersinstruments.each do |instrument| %>
                 <div class="col-3">
                   <div class="card">
-                    <div class="pic"><%=cl_image_tag instrument.photo.key, height: 152, width: 152, crop: :fill%>
+                    <div class="pic"><%=cl_image_tag instrument.photo.key, crop: :fill, class: "cld-responsive picture" %>
                       <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
                     </div>
                     <h4><%= link_to instrument.name, instrument %></h4>
@@ -20,29 +20,34 @@
               <%end%>
             </div>
           </div>
-          <div class="col-3">
-            <div class="my-cards-area">
-              <h4>My instruments</h4>
+          <div class="col-2">
+            <div id="main">
+              <button class="openbtn" onclick="openNav()">☰ My Instruments</button>
+          </div>
+        </div>
+
+          <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+              <h4 id="mine-title">My Instruments</h4>
               <% @myinstruments.each do |instrument| %>
-              <div class="card">
-                <div class="pic"><%=cl_image_tag instrument.photo.key, height: 160, width: 160, crop: :fill%>
+              <div class="card mine">
+                <div class="pic"><%=cl_image_tag instrument.photo.key, crop: :fill, class: "cld-responsive picture" %>
                   <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
                 </div>
                 <h4><%= link_to instrument.name, instrument %></h4>
                 <div class="manager_area">
-                  <div><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-                  <div><%= link_to 'Edit', edit_instrument_path(instrument) %></div>
+                  <div id="card-link"><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                  <div id="card-link"><%= link_to 'Edit', edit_instrument_path(instrument) %></div>
                 </div>
               </div>
               <%end%>
             </div>
-          </div>
       <%else%>
       <div class="row">
         <%@instruments.each do |instrument| %>
         <div class="col-3">
-          <div class="card">
-            <div class="pic"><%=cl_image_tag instrument.photo.key, height: 223, width: 223, crop: :fill%>
+          <div class="card" id="visitor">
+            <div class="pic"><%=cl_image_tag instrument.photo.key, crop: :fill, class: "cld-responsive picture" %>
               <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
             </div>
             <h4><%= link_to instrument.name, instrument %></h4>
@@ -51,3 +56,19 @@
         <%end%>
       <%end%>
 </div>
+<script type="text/javascript">
+  var cl = cloudinary.Cloudinary.new({cloud_name: "dddwbxenp"});
+  // replace 'demo' with your cloud name in the line above
+  cl.responsive();
+</script>
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>

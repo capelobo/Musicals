@@ -13,64 +13,31 @@
 @import "pages/index";
 
 body{
-  background-color: #b7b7a4;
+  background-color: #e9ecef;
 }
 
-.logo{
-  margin:0px;
-  font-size:26px;
-  font-family: 'Lobster', cursive
-}
-
-.spread{
-  display:flex;
-  flex-direction:row;
-  align-items:space-between;
-  a{
-  color:#797d62;
+footer{
+  background-color:#264653;
+  color: #cad2c5;
+  width:115.3%;
+  margin: 0px -100px;
+  padding:10px;
+  text-align:center;
+  p{
+    margin-left:100px;
+    font-size:12px;
+    line-height:1px;
   }
-  a:hover{
-    color:#b7b7a4;
-  }
-}
-
-#upperbar{
-  background-color:#e8eddf;
-}
-
-.logbtn{
-  border:1px solid #797d62;
-  border-radius:15px;
-  a{
-  color:#797d62;
-  }
-  a:hover{
-    color:white;
-  }
-}
-
-.logbtn:hover{
-background-color: #797d62;
-}
-
-.banner{
-  background-image: url('homepage.jpg');
-  height:300px;
-  width:100%;
-  background-repeat:no-repeat;
-  background-size:cover;
-  padding:60px;
-  h1{
-    color:white;
-    text-shadow: 2px 2px #797d62;
-    font-family: 'Lobster', cursive;
-    font-size:120px;
-    text-align:center;
+  .img-footer{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    margin: 0px 30px;
   }
 }
 
 h1, h2, h3, h4{
-  color:#333533;
+  color:#264653;
   font-family: 'Varela Round', sans-serif;
   font-weight:500;
 }
@@ -79,47 +46,13 @@ h4{
   margin-top:10px;
   text-align:center;
   a{
-    color:#333533;
+    color:#cad2c5;
   }
 }
 
 .head-title{
   margin-top:20px;
   margin-bottom:15px;
-}
-
-.card{
-  padding:5px;
-  border-radius:5px;
-  background-color:#cad2c5;
-  margin:10px;
-}
-
-.pic{
-  width:100%;
-}
-
-.price-tag{
-  background-color:#6a040f;
-  color:white;
-  width:100%;
-  padding:5px 5px;
-  font-size:14px;
-  text-align:center;
-}
-.my-cards-area{
-  width:75%;
-  margin:auto;
-  float:right;
-}
-
-.manager_area{
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between;
-  a{
-    color:#6a040f;
-  }
 }
 
 .instrument-title{
@@ -161,15 +94,4 @@ h4{
   width:90%;
   border:1px solid #a5a58d;
   // box-shadow:1px 1px #264653;
-}
-
-.btn{
-  background-color:#264653;
-  border:1px solid #2f3e46;
-  border-radius:5px;
-}
-
-.btn:hover{
-  background-color:#84a59d;
-  border:1px solid #84a59d;
 }
