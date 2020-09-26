@@ -1,4 +1,5 @@
 <div class="banner"><h1>Musical's</h1></div>
+  <div class="new-body">
   <div class="container">
     <h2 class="head-title">Choose your tone:</h2>
       <%if user_signed_in? %>
@@ -25,7 +26,7 @@
               <button class="openbtn" onclick="openNav()">☰ My Instruments</button>
           </div>
         </div>
-
+      </div>
           <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
               <h4 id="mine-title">My Instruments</h4>
@@ -56,6 +57,9 @@
         <%end%>
       <%end%>
 </div>
+</div>
+</div>
+
 <script type="text/javascript">
   var cl = cloudinary.Cloudinary.new({cloud_name: "dddwbxenp"});
   cl.responsive();
