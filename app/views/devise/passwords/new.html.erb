@@ -1,4 +1,7 @@
-<h2>Forgot your password?</h2>
+<div style="height:34vw" class="form-page">
+  <br>
+<h1>Forgot your password?</h1>
+<br>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -11,8 +14,12 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= f.button :submit, "Send me reset password instructions", :class => "photobtn main_button" %>
   </div>
 <% end %>
+<br>
 
+<div class="support-link">
 <%= render "devise/shared/links" %>
+</div>
+</div>

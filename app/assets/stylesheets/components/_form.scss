@@ -1,0 +1,57 @@
+#instrument_name, #instrument_price, #instrument_description{
+  border-radius:5px;
+}
+
+.photobtn{
+  border-radius:5px;
+  border:none;
+  background-color:#264653 !important;
+  color:#cad2c5;
+  padding:10px 20px;
+  cursor: pointer;
+}
+
+.photobtn:hover{
+    opacity:0.6;
+    color:#cad2c5;
+  }
+
+.main_button{
+  font-weight:800;
+  font-size:18px;
+  margin:0px;
+  color:#cad2c5;
+}
+
+.form-page{
+   text-align:center;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+   margin:0px;
+   padding:0px;
+}
+
+.optional{
+  font-size:18px;
+  color:#264653;
+}
+
+.is-valid{
+  color:#333533;
+}
+
+.support-link{
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+  a{
+    color:#264653;
+    font-weight:550;
+  }
+}
+
+#txt-camp{
+  width:600px;
+}

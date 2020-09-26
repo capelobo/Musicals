@@ -14,26 +14,7 @@
 
 body{
   background-color: #e9ecef;
-}
-
-footer{
-  background-color:#264653;
-  color: #cad2c5;
-  width:115.3%;
-  margin: 0px -100px;
-  padding:10px;
-  text-align:center;
-  p{
-    margin-left:100px;
-    font-size:12px;
-    line-height:1px;
-  }
-  .img-footer{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    margin: 0px 30px;
-  }
+  color:#333533;
 }
 
 h1, h2, h3, h4{
@@ -53,45 +34,5 @@ h4{
 .head-title{
   margin-top:20px;
   margin-bottom:15px;
-}
-
-.instrument-title{
-  font-size:70px;
-  text-align:center;
-  margin-bottom: 0px;
-  font-family: 'Vollkorn', serif;
-  text-shadow: 1px 1px white;
-}
-
-.instrument-area{
-  background-color:#eae2b7;
-  margin:auto;
-  padding:5px;
-  border-radius:5px;
-  width:80%;
-  border:2px solid #a5a58d;
-  // box-shadow: 1px 2px #a5a58d;
-}
-
-.show-picture{
-  padding:2px 2px;
-  margin:1px;
-}
-
-.instrument-box{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-.order-details{
-  background-color:transparent;
-  padding:30px;
-  margin-left:40px;
-  border-radius:5px;
-  text-align:center;
-  width:90%;
-  border:1px solid #a5a58d;
-  // box-shadow:1px 1px #264653;
+  margin-left:-40px;
 }

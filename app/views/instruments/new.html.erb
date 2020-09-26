@@ -1,13 +1,19 @@
-<h6">Cadastre seu instrumento</h6>
-
-<div class="container">
+<div class="form-page">
+<h1>Make your ad!</h1>
+<br>
   <%= simple_form_for(@instrument) do |f| %>
-  <div>
     <%= f.input :name %>
     <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Crie sua oferta"%>
-  </div>
+    <%= f.input :description, input_html: {id: "txt-camp"} %>
+    <label class="photobtn">
+    Upload Instrument photo
+      <span style="display:none;">
+        <%= f.file_field :photo%>
+      </span>
+    </label>
+    <br>
+    <br>
+    <%= f.submit "Submit", :class => "photobtn main_button" %>
   <% end %>
+  <br>
 </div>

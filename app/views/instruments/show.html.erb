@@ -1,26 +1,25 @@
 <p id="notice"><%= notice %></p>
 <h1 class="instrument-title"><%= @instrument.name %></h1>
-<div class="row instrument-area justify-content-center">
-  <div class="col-4">
-    <div class="show-picture">
-      <%= cl_image_tag @instrument.photo.key, height: 350, width: 350, crop: :pad %>
-    </div>
+<div class="row">
+  <div class="col-6">
+     <%=cl_image_tag @instrument.photo.key, class: "cld-responsive picture_big" %>
   </div>
-  <div class="col-7 instrument-box">
+  <div class="col-6 instrument-box">
     <div class="order-details">
-      <h3 style="text-align:justify"><strong>Price:</strong></h3>
-      <h3 style="text-align:justify"><span style="color:#6a040f"><%= price_mask_real(@instrument.price) %></span></h3>
+      <h3><strong>Price:</strong></h3>
+      <h5><span style="color:#333533"><%= price_mask_real(@instrument.price) %></span></h5>
       <br>
-      <h3 style="text-align:justify"><strong>Description:</strong></h3>
-      <p style="text-align:justify"><%= @instrument.description %></p>
+      <h3><strong>Description:</strong></h3>
+      <h5><%= @instrument.description %></h5>
       <br>
-<% if current_user == @instrument.user %>
-  <%#= link_to "Voltar", instruments_path %>
-  <%= link_to 'Destroy', @instrument, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Edit', edit_instrument_path(@instrument) %>
-<% else %>
-  <%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
-<% end %>
+    <% if current_user == @instrument.user %>
+    <div class="owner-links">
+      <div class="own-link"><%= link_to 'Destroy', @instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      <div class="own-link"><%= link_to 'Edit', edit_instrument_path(@instrument) %></div>
+    </div>
+    <% else %>
+      <%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
+    <% end %>
 </div>
 </div>
 </div>
