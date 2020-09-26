@@ -1,3 +1,4 @@
+// Buttons general layout
 .btn{
   background-color:#264653;
   border:1px solid #2f3e46;
@@ -8,7 +9,9 @@
   background-color:#84a59d;
   border:1px solid #84a59d;
 }
+// --------------------------------
 
+// Open-sidebar button
 .openbtn {
   background-color:#264653;
   border:1px solid #2f3e46;
@@ -23,51 +26,4 @@
 .openbtn:hover {
   background-color: #444;
 }
-
-.logbtn{
-  border:1px solid #cad2c5;
-  border-radius:15px;
-  a{
-  color:#cad2c5;
-  }
-  a:hover{
-    color:#333533;
-  }
-}
-
-.logbtn:hover{
-background-color: #cad2c5;
-color:#333533;
-}
-
-.closebtn{
-  color:#cad2c5;
-  text-decoration:none;
-  font-size:18px !important;
-  // padding:5px 1px;
-  margin-left:190px;
-  margin-bottom:0px;
-}
-
-.closebtn:hover{
-  text-decoration:none;
-  color:white;
-}
-
-.btnsrcnav{
-  border-radius:5px;
-  color:#264653;
-  border:1px solid #cad2c5;
-  margin-left:5px;
-  background-color:#cad2c5;
-}
-
-.btnsrcnav:hover{
-  background-color:#264653;
-  color: #cad2c5;
-  border:1px solid #cad2c5;
-}
-
-.campsrcnav{
-  border-radius:5px;
-}
+// --------------------------------

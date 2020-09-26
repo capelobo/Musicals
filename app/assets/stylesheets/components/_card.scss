@@ -1,9 +1,8 @@
+// Card general layout
 .card{
   padding:5px;
   border-radius:5px;
   background-color:#e9ecef;
-  // border-left:1px solid #333533;
-  // border-top:1px solid #333533;
   box-shadow: 1px 2px #333533;
   margin:10px;
   width:100%;
@@ -12,26 +11,15 @@
   }
 }
 
-.mine{
-  width:90%;
-  background-color:#cad2c5;
-  border:none;
-  box-shadow:none;
-}
-
-#visitor{
-  width:80%;
+.pic{
+  width:100%;
+  background-color:white
 }
 
 .picture{
   width:100%;
   height:180px;
   object-fit:contain;
-}
-
-.pic{
-  width:100%;
-  background-color:white
 }
 
 .price-tag{
@@ -42,4 +30,23 @@
   font-size:14px;
   text-align:center;
 }
+// -----------------------------
+
+// My instruments cards
+.mine{
+  width:90%;
+  background-color:#cad2c5;
+  border:none;
+  box-shadow:none;
+}
+// -------------------------------
+
+// Index card when user is not logged in
+#visitor{
+  width:80%;
+}
+// ------------------------------------
+
+
+
 

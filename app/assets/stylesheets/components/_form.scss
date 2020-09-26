@@ -1,28 +1,4 @@
-#instrument_name, #instrument_price, #instrument_description{
-  border-radius:5px;
-}
-
-.photobtn{
-  border-radius:5px;
-  border:none;
-  background-color:#264653 !important;
-  color:#cad2c5;
-  padding:10px 20px;
-  cursor: pointer;
-}
-
-.photobtn:hover{
-    opacity:0.6;
-    color:#cad2c5;
-  }
-
-.main_button{
-  font-weight:800;
-  font-size:18px;
-  margin:0px;
-  color:#cad2c5;
-}
-
+// General form layout
 .form-page{
    text-align:center;
    display:flex;
@@ -42,6 +18,31 @@
   color:#333533;
 }
 
+.main_button{
+  font-weight:800;
+  font-size:18px;
+  margin:0px;
+  color:#cad2c5;
+}
+// -----------------------------
+
+// Upload photo button
+.photobtn{
+  border-radius:5px;
+  border:none;
+  background-color:#264653 !important;
+  color:#cad2c5;
+  padding:10px 20px;
+  cursor: pointer;
+}
+
+.photobtn:hover{
+    opacity:0.6;
+    color:#cad2c5;
+  }
+// -------------------------------
+
+// Links of support (log in, sign in, forgot password)
 .support-link{
   display:flex;
   flex-direction:column;
@@ -51,7 +52,10 @@
     font-weight:550;
   }
 }
+// ----------------------------------
 
+// Bigger text camp
 #txt-camp{
   width:600px;
 }
+// -------------------------------------

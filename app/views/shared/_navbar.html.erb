@@ -13,12 +13,12 @@
           %>
         </div>
         <div>
-      <%= submit_tag "Search", class: "btn btn-primary btnsrcnav" %>
+      <%= submit_tag "Search", redirect_to: "instruments/index", class: "btnsrcnav" %>
     </div>
     </div>
       <% end %>
     </div>
-  <% if user_signed_in? %>
+   <% if user_signed_in? %>
     <div class="spread">
       <%= link_to "Cadastrar oferta", "/instruments/new", class: "nav-link" %>
     </div>
