@@ -11,8 +11,9 @@ class OrdersController < ApplicationController
 
     if current_user == @order.instrument.user
       redirect_to instruments_url, notice: 'Ups! Você já é dono deste instrumento.'
-    else 
+    else
       if @order.save
+        InstrumentsController.sell(@order.instrument)
         redirect_to instruments_path
       else
         render :new

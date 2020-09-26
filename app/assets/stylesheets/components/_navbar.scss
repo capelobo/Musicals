@@ -43,3 +43,18 @@
   flex-direction:row;
   justify-content:space-between;
 }
+
+.signup-link{
+  line-height:1px;
+  text-align:center;
+  color: #cad2c5;
+  a{
+    color: #cad2c5;
+    font-weight:700;
+    text-decoration:underline;
+  }
+  a:hover{
+    color:white;
+    text-decoration:underline;
+  }
+}

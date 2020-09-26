@@ -1,5 +1,4 @@
 <div class="navbar navbar-light navbar-lewagon" id="upperbar">
-  <% if user_signed_in? %>
     <div class="spread">
       <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
     </div>
@@ -19,6 +18,7 @@
     </div>
       <% end %>
     </div>
+  <% if user_signed_in? %>
     <div class="spread">
       <%= link_to "Cadastrar oferta", "/instruments/new", class: "nav-link" %>
     </div>
@@ -26,26 +26,11 @@
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </div>
   <% else %>
-    <div class="spread">
-      <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
+    <div class="signup-link">
+      <p>Not a member yet?</p>
+      <%= link_to "Sign up", "users/sign_up", class: "nav-link" %>
     </div>
-     <div class="spread">
-    <div class="search-area">
-      <div>
-      <%= form_tag instruments_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control campsrcnav",
-          placeholder: "Find an instrument"
-          %>
-        </div>
-        <div>
-      <%= submit_tag "Search", class: "btn btn-primary btnsrcnav" %>
-    </div>
-    </div>
-      <% end %>
-    </div>
-    <div style="margin-left:30%" class="logbtn">
+    <div class="logbtn">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </div>
   <% end %>

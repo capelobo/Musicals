@@ -2,16 +2,17 @@
   <div class="new-body">
   <div class="container">
     <h2 class="head-title">Choose your tone:</h2>
+        <%@tosellinstruments = @instruments.reject { |instrument| instrument.sold == true }%>
       <%if user_signed_in? %>
-        <%@myinstruments = Instrument.all.select { |instrument| instrument.user_id == current_user.id}%>
-        <%@othersinstruments = @instruments.reject { |inst| @myinstruments.include? inst } %>
+        <%@myinstruments = @tosellinstruments.select { |instrument| instrument.user_id == current_user.id}%>
+        <%@othersinstruments = @tosellinstruments.reject { |inst| @myinstruments.include? inst } %>
         <div class="row">
           <div class="col-10">
             <div class="row">
               <%@othersinstruments.each do |instrument| %>
                 <div class="col-3">
                   <div class="card">
-                    <div class="pic"><%=cl_image_tag instrument.photo.key, crop: :fill, class: "cld-responsive picture" %>
+                    <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
                       <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
                     </div>
                     <h4><%= link_to instrument.name, instrument %></h4>
@@ -32,7 +33,7 @@
               <h4 id="mine-title">My Instruments</h4>
               <% @myinstruments.each do |instrument| %>
               <div class="card mine">
-                <div class="pic"><%=cl_image_tag instrument.photo.key, crop: :fill, class: "cld-responsive picture" %>
+                <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
                   <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
                 </div>
                 <h4><%= link_to instrument.name, instrument %></h4>
@@ -45,10 +46,10 @@
             </div>
       <%else%>
       <div class="row">
-        <%@instruments.each do |instrument| %>
+        <%@tosellinstruments.each do |instrument| %>
         <div class="col-3">
           <div class="card" id="visitor">
-            <div class="pic"><%=cl_image_tag instrument.photo.key, crop: :fill, class: "cld-responsive picture" %>
+            <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
               <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
             </div>
             <h4><%= link_to instrument.name, instrument %></h4>
