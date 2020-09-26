@@ -6,6 +6,16 @@
     <div class="spread">
       <%= link_to "Cadastrar oferta", "/instruments/new", class: "nav-link" %>
     </div>
+    <div>
+      <%= form_tag instruments_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an instrument"
+          %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
     <div class="logbtn">
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </div>
@@ -13,8 +23,17 @@
     <div class="spread">
       <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
     </div>
+     <div>
+      <%= form_tag instruments_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an instrument"
+          %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
     <div style="margin-left:70%" class="logbtn">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </div>
   <% end %>
-</div>
