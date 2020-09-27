@@ -3,7 +3,7 @@
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   right: 0;
   background-color: #264653;
@@ -13,18 +13,13 @@
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
+  color: #e5e5e5;
 }
 // -------------------------------------
 
 // Main Title
 #mine-title{
-  color: #cad2c5 !important;
+  color: #e5e5e5 !important;
   margin:5px;
 }
 // -------------------------------
@@ -39,7 +34,7 @@
 }
 
 .closebtn{
-  color:#cad2c5;
+  color:#e5e5e5;
   text-decoration:none;
   font-size:18px !important;
   margin-left:190px;
@@ -57,13 +52,20 @@
   display:flex;
   flex-direction:row;
   justify-content:space-between;
+}
+// individual links edit and destroy
+#card-link-del{
+  font-size:15px;
   a{
     color:#6a040f;
   }
 }
-// individual links edit and destroy
-#card-link{
-  font-size:15px;
+
+#card-link-edit{
+   font-size:15px;
+   a{
+    color:#264653;
+  }
 }
 // --------------------------------
 

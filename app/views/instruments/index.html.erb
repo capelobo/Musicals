@@ -1,71 +1,85 @@
+<!-- OS comentários dizem sempre respeito ao código imediatamente abaixo a eles -->
+
+<!-- Banner e nome/logo da página -->
 <div class="banner"><h1>Musical's</h1></div>
-  <div class="container">
+<div class="container">
+  <div class="overcards-area">
+    <!-- Título/chamada -->
     <h2 class="head-title">Choose your tone:</h2>
-        <%@tosellinstruments = @instruments.reject { |instrument| instrument.sold == true }%>
-      <%if user_signed_in? %>
-        <%@myinstruments = @tosellinstruments.select { |instrument| instrument.user_id == current_user.id}%>
-        <%@othersinstruments = @tosellinstruments.reject { |inst| @myinstruments.include? inst } %>
-        <div class="row">
-          <div class="col-10">
-            <div class="row">
-              <%@othersinstruments.each do |instrument| %>
-                <div class="col-3">
-                  <div class="card">
-                    <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
-                      <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
-                    </div>
-                    <h4><%= link_to instrument.name.capitalize, instrument %></h4>
-                    <div style="display:none"><%=instrument.description%></div>
-                  </div>
-                    <br>
-                </div>
-              <%end%>
-            </div>
-          </div>
-          <div class="col-2">
-            <div id="main">
-              <button class="openbtn" onclick="openNav()">☰ My Instruments</button>
-          </div>
-        </div>
+    <!-- Botão "my instruments" -->
+    <%if user_signed_in? %>
+      <div id="main">
+        <button class="openbtn" onclick="openNav()">♫ My Instruments</button>
       </div>
-          <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
-              <h4 id="mine-title">My Instruments</h4>
-              <% @myinstruments.each do |instrument| %>
-              <div class="card mine">
-                <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
-                  <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
-                </div>
-                <h4><%= link_to instrument.name.capitalize, instrument %></h4>
-                <div class="manager_area">
-                  <div id="card-link"><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-                  <div id="card-link"><%= link_to 'Edit', edit_instrument_path(instrument) %></div>
-                </div>
-              </div>
-              <%end%>
-            </div>
-      <%else%>
-      <div class="row">
-        <%@tosellinstruments.each do |instrument| %>
+    <%end%>
+  </div>
+  <!-- Operação para tirar das views os itens já comprados -->
+  <%@tosellinstruments = @instruments.sort_by { |inst| inst.name.downcase}.reject { |instrument| instrument.sold == true }%>
+  <%if user_signed_in? %>
+  <!-- Separação entre os instrumentos que user está vendendo e os outros -->
+    <%@myinstruments = @tosellinstruments.select { |instrument| instrument.user_id == current_user.id}%>
+    <%@othersinstruments = @tosellinstruments.reject { |inst| @myinstruments.include? inst } %>
+    <div class="row">
+      <!-- Cards que aparecem no index quando o usuário está logado -->
+      <%@othersinstruments.each do |instrument| %>
         <div class="col-3">
-          <div class="card" id="visitor">
+          <div class="card">
             <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
               <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
             </div>
             <h4><%= link_to instrument.name.capitalize, instrument %></h4>
+            <!-- descrição do item escondida para funcionar na busca mas não atrapalhar a experiência do usuário -->
             <div style="display:none"><%=instrument.description%></div>
           </div>
+          <br>
         </div>
-        <%end%>
       <%end%>
-</div>
+    </div>
+    <!-- Barra lateral do "my instruments" que aparece ao apertar o botão -->
+    <div id="mySidebar" class="sidebar">
+    <!-- O "x" para feixar a barra lateral -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+    <h4 id="mine-title">My Instruments</h4>
+    <!-- Cards da barra lateral -->
+    <% @myinstruments.each do |instrument| %>
+      <div class="card mine">
+        <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
+          <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
+        </div>
+        <h4><%= link_to instrument.name.capitalize, instrument %></h4>
+        <div class="manager_area">
+          <div id="card-link-edit"><%= link_to 'Edit', edit_instrument_path(instrument) %></div>
+          <div id="card-link-del"><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        </div>
+      </div>
+    <%end%>
+    </div>
+  <%else%>
+    <div class="row">
+      <!-- Cards que aparecem quando o usuário não está logado -->
+      <%@tosellinstruments.each do |instrument| %>
+        <div class="col-3">
+          <div class="card">
+            <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
+              <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
+            </div>
+            <h4><%= link_to instrument.name.capitalize, instrument %></h4>
+            <!-- descrição escondida -->
+            <div style="display:none"><%=instrument.description%></div>
+          </div>
+          <br>
+        </div>
+      <%end%>
+    </div>
+  <%end%>
 </div>
 <br>
-
+<!-- Responsividade das fotos -->
 <script type="text/javascript">
   var cl = cloudinary.Cloudinary.new({cloud_name: "dddwbxenp"});
   cl.responsive();
 </script>
+<!-- Abertura e fechamento da barra lateral -->
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";

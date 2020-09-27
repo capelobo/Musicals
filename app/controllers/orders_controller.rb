@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def new
     @instrument = Instrument.find(params[:instrument_id])
   end
@@ -19,6 +18,5 @@ class OrdersController < ApplicationController
         render :new
       end
     end
-
   end
 end

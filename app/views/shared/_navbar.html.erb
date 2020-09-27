@@ -1,38 +1,59 @@
 <div class="navbar navbar-light navbar-lewagon" id="upperbar">
-    <div class="spread">
-      <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
-    </div>
-    <div class="spread">
+<!-- Logo start -->
+  <div class="spread">
+    <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
+  </div>
+<!-- Logo end -->
+<!-- Search start -->
+  <div class="spread">
     <div class="search-area">
       <div>
-      <%= form_tag instruments_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control btnsrccamp",
-          placeholder: "Find an instrument"
-          %>
-        </div>
-        <div>
-      <%= submit_tag "Search", redirect_to: instruments_path, class: "btnsrcnav" %>
-    </div>
+        <%= form_tag instruments_path, method: :get do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control btnsrccamp",
+            placeholder: "Find an instrument"
+            %>
+      </div>
+      <div>
+        <%=submit_tag "Search", redirect_to: instruments_path, class: "btnsrcnav" %>
+      </div>
     </div>
       <% end %>
-    </div>
-   <% if user_signed_in? %>
+  </div>
+<!-- Search end -->
+<!-- Logged in/out changes on the navbar -->
+  <% if user_signed_in? %>
+<!-- Logged in navbar start -->
+<!-- Logged in navbar - Make a ad!-->
     <div class="spread">
-      <%= link_to "Cadastrar oferta", "/instruments/new", class: "nav-link" %>
+      <div class="makead-link">
+        <p>Do you want to sell?</p>
+        <%= link_to "Make your ad!", "/instruments/new", class: "nav-link" %>
+      </div>
     </div>
+<!-- End of make a ad! -->
+<!-- Logged in navbar - log out -->
     <div class="logbtn">
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </div>
+<!-- End of log out -->
+<!-- End of Logged in navbar -->
   <% else %>
+<!-- Logged out navbar start -->
+<!-- Logged out navbar - sign up link start-->
     <div class="signup-link">
       <p>Not a member yet?</p>
-      <%= link_to "Sign up", "users/sign_up", class: "nav-link" %>
+      <%= link_to "Sign up", "../users/sign_up", class: "nav-link" %>
     </div>
+<!-- End of sign up -->
+<!-- Logged out navbar - log in start -->
     <div class="logbtn">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </div>
   <% end %>
+<!-- End of log in -->
+<!-- End of Logged out navbar -->
+<!-- End of Log in/out changes -->
 </div>
 

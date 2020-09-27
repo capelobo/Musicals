@@ -1,25 +1,31 @@
+<!-- pop ups com os avisos -->
 <p id="notice"><%= notice %></p>
+<!-- Nome do Instrumento -->
 <h1 class="instrument-title"><%= @instrument.name.capitalize %></h1>
-<div class="row">
-  <div class="col-6">
-     <%=cl_image_tag @instrument.photo.key, class: "cld-responsive picture_big" %>
-  </div>
-  <div class="col-6 instrument-box">
-    <div class="order-details">
-      <h3><strong>Price:</strong></h3>
-      <h5><span style="color:#333533"><%= price_mask_real(@instrument.price) %></span></h5>
-      <br>
-      <h3><strong>Description:</strong></h3>
-      <h5><%= @instrument.description %></h5>
-      <br>
-    <% if current_user == @instrument.user %>
-    <div class="owner-links">
-      <div class="own-link"><%= link_to 'Destroy', @instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-      <div class="own-link"><%= link_to 'Edit', edit_instrument_path(@instrument) %></div>
+  <div class="row">
+    <div class="col-6">
+      <!-- Imagem do instrumento -->
+      <%=cl_image_tag @instrument.photo.key, class: "cld-responsive picture_big" %>
     </div>
-    <% else %>
-      <%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
-    <% end %>
-</div>
-</div>
-</div>
+    <div class="col-6 instrument-box">
+      <!-- Dados do instrumento -->
+      <div class="order-details">
+        <h3><strong>Price:</strong></h3>
+        <h5><span style="color:#333533"><%= price_mask_real(@instrument.price) %></span></h5>
+        <br>
+        <h3><strong>Description:</strong></h3>
+        <h5><%= @instrument.description %></h5>
+        <br>
+        <% if current_user == @instrument.user %>
+          <!-- Links editar e deletar quando o instrumento pertence ao usuaŕio -->
+          <div class="owner-links">
+            <div class="edit-link"><%= link_to 'Edit', edit_instrument_path(@instrument) %></div>
+            <div class="del-link"><%= link_to 'Destroy', @instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div>
+        <% else %>
+          <!-- Botão comprar quando o instrumento não pertence ao usuário -->
+          <%= link_to 'Buy this instrument', new_instrument_order_path(@instrument), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
