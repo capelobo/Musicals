@@ -35,7 +35,7 @@
                 <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
                   <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
                 </div>
-                <h4><%= link_to instrument.name, instrument %></h4>
+                <h4><%= link_to instrument.name.capitalize, instrument %></h4>
                 <div class="manager_area">
                   <div id="card-link"><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></div>
                   <div id="card-link"><%= link_to 'Edit', edit_instrument_path(instrument) %></div>
@@ -51,7 +51,7 @@
             <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
               <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
             </div>
-            <h4><%= link_to instrument.name, instrument %></h4>
+            <h4><%= link_to instrument.name.capitalize, instrument %></h4>
           </div>
         </div>
         <%end%>
