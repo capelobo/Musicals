@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     else
       if @order.save
         InstrumentsController.sell(@order.instrument)
-        redirect_to instruments_path
+        redirect_to instruments_path, notice: "You just bought the #{@order.instrument.name}."
       else
         render :new
       end

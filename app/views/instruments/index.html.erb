@@ -1,5 +1,4 @@
 <div class="banner"><h1>Musical's</h1></div>
-  <div class="new-body">
   <div class="container">
     <h2 class="head-title">Choose your tone:</h2>
         <%@tosellinstruments = @instruments.reject { |instrument| instrument.sold == true }%>
@@ -59,7 +58,7 @@
       <%end%>
 </div>
 </div>
-</div>
+<br>
 
 <script type="text/javascript">
   var cl = cloudinary.Cloudinary.new({cloud_name: "dddwbxenp"});
