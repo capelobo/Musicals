@@ -1,0 +1,75 @@
+// Sidebar basic layout
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #264653;
+  transition: 0.5s;
+  padding-top: 60px;
+  overflow-y: auto;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+// -------------------------------------
+
+// Main Title
+#mine-title{
+  color: #cad2c5 !important;
+  margin:5px;
+}
+// -------------------------------
+
+// Sidebar close "x"
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+
+.closebtn{
+  color:#cad2c5;
+  text-decoration:none;
+  font-size:18px !important;
+  margin-left:190px;
+  margin-bottom:0px;
+}
+
+.closebtn:hover{
+  text-decoration:none;
+  color:white;
+}
+// ------------------------------------
+
+// Links to edit and destroy on the card
+.manager_area{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  a{
+    color:#6a040f;
+  }
+}
+// individual links edit and destroy
+#card-link{
+  font-size:15px;
+}
+// --------------------------------
+
+// responsiveness
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+// --------------------------------

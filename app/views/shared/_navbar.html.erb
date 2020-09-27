@@ -1,22 +1,38 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", instruments_path, class: "nav-link" %>
-        </li>
-          <%= link_to "Cadastrar oferta", "/instruments/new", class: "nav-link" %>
-        </li>
-          <%= link_to "Meus anúncios", "/instruments/mine", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+<div class="navbar navbar-light navbar-lewagon" id="upperbar">
+    <div class="spread">
+      <div class="logo"><%= link_to "Musical's", instruments_path, class: "nav-link" %></div>
+    </div>
+    <div class="spread">
+    <div class="search-area">
+      <div>
+      <%= form_tag instruments_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control btnsrccamp",
+          placeholder: "Find an instrument"
+          %>
+        </div>
+        <div>
+      <%= submit_tag "Search", redirect_to: instruments_path, class: "btnsrcnav" %>
+    </div>
+    </div>
       <% end %>
-    </ul>
-  </div>
+    </div>
+   <% if user_signed_in? %>
+    <div class="spread">
+      <%= link_to "Cadastrar oferta", "/instruments/new", class: "nav-link" %>
+    </div>
+    <div class="logbtn">
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    </div>
+  <% else %>
+    <div class="signup-link">
+      <p>Not a member yet?</p>
+      <%= link_to "Sign up", "users/sign_up", class: "nav-link" %>
+    </div>
+    <div class="logbtn">
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    </div>
+  <% end %>
 </div>
+

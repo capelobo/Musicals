@@ -1,10 +1,20 @@
+<div class="form-page">
 <h1>Edit Your Instrument</h1>
 
 <%= simple_form_for (@instrument) do |f| %>
   <%= f.input :name %>
   <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <%= f.input :description, input_html: {id: "txt-camp"} %>
+  <label class="photobtn">
+    Upload Instrument photo
+    <span style="display:none;">
+      <%= f.file_field :photo%>
+    </span>
+  </label>
+  <br>
+  <br>
+  <%= f.submit "Update", :class => "photobtn main_button" %>
   <% end %>
+</div>
+<br>
 
