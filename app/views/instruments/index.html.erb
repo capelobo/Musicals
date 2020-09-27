@@ -15,6 +15,7 @@
                       <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
                     </div>
                     <h4><%= link_to instrument.name.capitalize, instrument %></h4>
+                    <div style="display:none"><%=instrument.description%></div>
                   </div>
                     <br>
                 </div>
@@ -52,6 +53,7 @@
               <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
             </div>
             <h4><%= link_to instrument.name.capitalize, instrument %></h4>
+            <div style="display:none"><%=instrument.description%></div>
           </div>
         </div>
         <%end%>
