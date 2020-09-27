@@ -15,7 +15,7 @@
                     <div class="pic"><%=cl_image_tag instrument.photo.key, class: "cld-responsive picture" %>
                       <div class="price-tag"><strong>Price: </strong><%= price_mask_real(instrument.price) %></div>
                     </div>
-                    <h4><%= link_to instrument.name, instrument %></h4>
+                    <h4><%= link_to instrument.name.capitalize, instrument %></h4>
                   </div>
                     <br>
                 </div>

@@ -2,6 +2,7 @@ class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :destroy]
 
   def index
+    @instruments = []
     if params[:query].present?
       @instruments = Instrument.search_by_name_and_description(params[:query])
     else
