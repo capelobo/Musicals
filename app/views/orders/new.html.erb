@@ -1,9 +1,9 @@
 <div style="height:32vw" class="form-page">
   <br>
-<h1>Confirmation</h1>
-<br>
-<h5>You will pay <%=@instrument.price%> to buy the <%=@instrument.name%>.</h5>
-<br>
-<%= link_to 'Confirm?', instrument_orders_path(@instrument), method: :post, class: "btn btn-primary" %>
+  <h1>Confirmation</h1>
+  <br>
+  <h5>You will pay <%=@instrument.price%> to buy the <%=@instrument.name%>.</h5>
+  <br>
+  <%= link_to 'Confirm?', instrument_orders_path(@instrument), method: :post, class: "btn btn-primary" %>
 </div>
 <br>

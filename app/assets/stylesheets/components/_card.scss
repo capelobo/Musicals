@@ -2,18 +2,23 @@
 .card{
   padding:5px;
   border-radius:5px;
-  background-color:#e9ecef;
-  box-shadow: 1px 2px #333533;
+  background-color:#264653;
+  box-shadow: 3px 3px #333533;
   margin:10px;
-  width:100%;
+  width:90%;
   a{
-    color: #333533;
+    color: #e5e5e5;
+  }
+  a:hover{
+    color:white;
+    text-decoration:none;
+    font-size:101%;
   }
 }
 
 .pic{
   width:100%;
-  background-color:white
+  background-color:white;
 }
 
 .picture{
@@ -23,8 +28,8 @@
 }
 
 .price-tag{
-  background-color:#264653;
-  color:white;
+  background-color:#333533;
+  color:#e5e5e5;
   width:100%;
   padding:5px 5px;
   font-size:14px;
@@ -35,9 +40,12 @@
 // My instruments cards
 .mine{
   width:90%;
-  background-color:#cad2c5;
+  background-color:#e5e5e5;
   border:none;
   box-shadow:none;
+  a{
+    color: #333533;
+  }
 }
 // -------------------------------
 

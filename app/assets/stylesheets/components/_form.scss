@@ -22,7 +22,7 @@
   font-weight:800;
   font-size:18px;
   margin:0px;
-  color:#cad2c5;
+  color:#e5e5e5;
 }
 // -----------------------------
 
@@ -30,16 +30,17 @@
 .photobtn{
   border-radius:5px;
   border:none;
-  background-color:#264653 !important;
-  color:#cad2c5;
+  background-color:#264653;
+  color:#e5e5e5;
   padding:10px 20px;
   cursor: pointer;
 }
 
 .photobtn:hover{
-    opacity:0.6;
-    color:#cad2c5;
-  }
+  background-color:#84a59d;
+  border:1px solid #84a59d;
+  color:white;
+}
 // -------------------------------
 
 // Links of support (log in, sign in, forgot password)

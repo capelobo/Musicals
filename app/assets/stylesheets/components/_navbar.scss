@@ -20,10 +20,11 @@
   flex-direction:row;
   align-items:space-between;
   a{
-  color:#cad2c5;
+  color:#e5e5e5;
+  font-weight:700;
   }
   a:hover{
-    color: #cad2c5;
+    color: white;
   }
 }
 
@@ -34,7 +35,7 @@
   margin:0px;
   font-size:26px;
   font-family: 'Lobster', cursive;
-  color: #cad2c5;
+  color: #e5e5e5;
 }
 // ---------------------------------
 
@@ -47,17 +48,17 @@
 
 .btnsrcnav{
   border-radius:5px;
-  color:#264653;
-  border:1px solid #cad2c5;
+  color:#e5e5e5;
+  border:1px solid #e5e5e5;
   margin-left:5px;
-  background-color:#cad2c5;
+  background-color:#264653;
   padding:6px 10px;
 }
 
 .btnsrcnav:hover{
-  background-color:#264653;
-  color: #cad2c5;
-  border:1px solid #cad2c5;
+  background-color:#e5e5e5;
+  color: #264653;
+  border:1px solid #e5e5e5;
 }
 
 .campsrcnav{
@@ -69,26 +70,25 @@
 .signup-link{
   line-height:1px;
   text-align:center;
-  color: #cad2c5;
+  color: #e5e5e5;
   a{
-    color: #cad2c5;
+    color: #e5e5e5;
     font-weight:700;
-    text-decoration:underline;
+    text-decoration:none;
   }
   a:hover{
     color:white;
-    text-decoration:underline;
+    text-decoration:none;
   }
 }
 // --------------------------------------
 
-// Log in/out button
-
+// Log in button
 .logbtn{
-  border:1px solid #cad2c5;
-  border-radius:15px;
+  border:1px solid #e5e5e5;
+  border-radius:5px;
   a{
-  color:#cad2c5;
+  color:#e5e5e5;
   }
   a:hover{
     color:#333533;
@@ -96,7 +96,50 @@
 }
 
 .logbtn:hover{
-background-color: #cad2c5;
+background-color: #e5e5e5;
 color:#333533;
 }
 // -----------------------------------
+
+// Make an add link
+.makead-link{
+  color: #e5e5e5;
+  line-height:0.8;
+  text-align:center;
+  p{
+    margin:0px;
+  }
+}
+
+// Dropdown menu
+#navbarDropdown{
+  color: #e5e5e5;
+  font-weight:700;
+  border-radius:5px;
+  margin-right:5px;
+}
+
+#navbarDropdown:hover{
+  color: white;
+  font-weight:700;
+  border-radius:5px;
+}
+
+#downcase{
+  background-color:#264653;
+  padding:5px 0px;
+  a{
+    color: #e5e5e5;
+    font-weight:700;
+  }
+}
+
+.dplink{
+  box-shadow:1px 1px #1a535c;
+  margin-bottom:3px;
+}
+
+.dplink:hover{
+background-color:#84a59d;
+}
+// ----------------------------------
