@@ -1,6 +1,8 @@
 <div class="form-page">
 <h1>Edit Your Instrument</h1>
-
+<div class="col-6">
+     <%=cl_image_tag @instrument.photo.key, class: "cld-responsive picture_big" %>
+</div>
 <%= simple_form_for (@instrument) do |f| %>
   <%= f.input :name %>
   <%= f.input :price %>
