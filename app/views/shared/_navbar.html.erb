@@ -33,11 +33,17 @@
       </div>
     </div>
 <!-- End of make a ad! -->
-<!-- Logged in navbar - log out -->
-    <div class="logbtn">
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-    </div>
-<!-- End of log out -->
+<!-- Logged in navbar - dropdown -->
+    <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         My account
+        </a>
+        <div id="downcase" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div style="border-top:1px solid white" class="dropdown-item dplink"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></div>
+          <div class="dropdown-item dplink"><%= link_to "My Orders", orders_path, class: "nav-link" %></div>
+        </div>
+      </div>
+<!-- End of dropdown -->
 <!-- End of Logged in navbar -->
   <% else %>
 <!-- Logged out navbar start -->

@@ -1,11 +1,23 @@
 .order-pic{
-width:100px;
-height:100px;
+width:105px;
+height:105px;
 border:1px solid black;
 background-color:white;
+margin-bottom:5px;
+padding:2px;
 }
 
 .order-picture{
   width:100%;
+  height:100px;
   object-fit:contain;
+}
+
+.info{
+  margin-left:20px;
+}
+
+.order-page{
+  height:34vw;
+  width:90%;
 }
