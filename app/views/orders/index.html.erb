@@ -1,0 +1,20 @@
+<%@my_orders.each do |order|%>
+  <div class="row">
+    <div class="col-2">
+      <div class="order-pic"><%=cl_image_tag order.instrument.photo.key, class: "cld-responsive order-picture" %></div>
+    </div>
+    <div class="col-6">
+      <h4 style='text-align:left'><%=order.instrument.name.capitalize%></h4>
+      <%if order.created_at.strftime("%d") == '1'%>
+        <%@sufix = 'st'%>
+      <%elsif order.created_at.strftime("%d") == '2'%>
+        <%@sufix = 'nd'%>
+      <%elsif order.created_at.strftime("%d") == '3'%>
+        <%@sufix = 'rd'%>
+      <%else%>
+        <%@sufix = 'th'%>
+      <%end%>
+      <h6><%=order.created_at.strftime("%h-%d#{@sufix}-%Y %H:%m")%></h6>
+    </div>
+  </div>
+<%end%>
