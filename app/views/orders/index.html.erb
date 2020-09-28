@@ -1,22 +1,26 @@
 <div class="order-page">
   <%@my_orders.each do |order|%>
-    <div class="row">
-      <div class="col-1">
-        <div class="order-pic"><%=cl_image_tag order.instrument.photo.key, class: "cld-responsive order-picture" %></div>
-      </div>
-      <div class="col-6">
-        <div class="info">
-          <h4 style='text-align:left'><%=order.instrument.name.capitalize%></h4>
-          <%if order.created_at.strftime("%d") == '1'%>
-            <%@sufix = 'st'%>
-          <%elsif order.created_at.strftime("%d") == '2'%>
-            <%@sufix = 'nd'%>
-          <%elsif order.created_at.strftime("%d") == '3'%>
-            <%@sufix = 'rd'%>
-          <%else%>
-            <%@sufix = 'th'%>
-          <%end%>
-          <h6><%=order.created_at.strftime("%h %d#{@sufix}, %Y - %H:%m")%></h6>
+    <div class="order-row">
+      <div class="row">
+        <div class="col-1">
+          <div class="order-pic"><%=cl_image_tag order.instrument.photo.key, class: "cld-responsive order-picture" %></div>
+        </div>
+        <div class="col-6">
+          <div class="info">
+            <h4 style='text-align:left'><%=order.instrument.name.capitalize%></h4>
+            <h6>Paid: <%=price_mask_real(order.instrument.price)%></h6>
+            <%if order.created_at.strftime("%d") == '1'%>
+              <%@sufix = 'st'%>
+            <%elsif order.created_at.strftime("%d") == '2'%>
+              <%@sufix = 'nd'%>
+            <%elsif order.created_at.strftime("%d") == '3'%>
+              <%@sufix = 'rd'%>
+            <%else%>
+              <%@sufix = 'th'%>
+            <%end%>
+            <h6><%=order.created_at.strftime("%h %d#{@sufix}, %Y - %H:%m")%></h6>
+            <p>Order Nº: <span style="color:#333533;font-weight:700">mus_#<%=order.created_at.strftime("%Y%m%d%H%m")%><%=order.id%></span></p>
+          </div>
         </div>
       </div>
     </div>
