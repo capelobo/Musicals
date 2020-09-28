@@ -8,22 +8,35 @@
 .btn:hover{
   background-color:#84a59d;
   border:1px solid #84a59d;
+  color:white;
 }
 // --------------------------------
 
 // Open-sidebar button
+#main {
+  transition: margin-left .5s;
+  padding: 16px 2px;
+  position:relative;
+}
+
 .openbtn {
   background-color:#264653;
   border:1px solid #2f3e46;
   border-radius:5px;
   font-size: 16px;
   cursor: pointer;
-  color: white;
+  color: #e5e5e5;
   padding: 10px 15px;
-  width:140%;
+  width:180px;
+  margin-right:0px;
+  position:absolute;
+  top:-25px;
+  right:-69px;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background-color: #84a59d;
+   border:1px solid #84a59d;
+   color:white;
 }
 // --------------------------------

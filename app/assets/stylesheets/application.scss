@@ -13,7 +13,7 @@
 @import "pages/index";
 
 body{
-  background-color: #e9ecef;
+  background-color: #e5e5e5;
   color:#333533;
 }
 
@@ -27,12 +27,24 @@ h4{
   margin-top:10px;
   text-align:center;
   a{
-    color:#cad2c5;
+    color:#e5e5e5;
   }
+}
+
+.focus-area{
+  min-height:34vw;
+}
+
+.overcards-area{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  position:relative;
 }
 
 .head-title{
   margin-top:20px;
   margin-bottom:15px;
   margin-left:-40px;
+  text-shadow: 1px 1px #e5e5e5;
 }
